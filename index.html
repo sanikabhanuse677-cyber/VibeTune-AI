@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibeTune AI 🎧</title>
+
+  <!-- Font (optimized load) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🔥 BACKGROUND -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- HEADER -->
+<header class="top-bar">
+  <h1>VibeTune AI 🎧</h1>
+  <div class="icon" onclick="toggleFav()">❤️</div>
+</header>
+
+<!-- FILTERS -->
+<section class="filters">
+  <select id="mood">
+    <option value="">Mood</option>
+    <option value="happy">Happy</option>
+    <option value="sad">Sad</option>
+    <option value="romantic">Romantic</option>
+    <option value="calm">Calm</option>
+  </select>
+
+  <select id="era">
+    <option value="">Era</option>
+    <option value="70s">70s</option>
+    <option value="80s">80s</option>
+    <option value="90s">90s</option>
+    <option value="after2010">After 2010</option>
+  </select>
+
+  <button onclick="searchSongs()">Find My Vibe ✨</button>
+  <button class="clear-btn" onclick="clearSongs()">Clear 🗑️</button>
+</section>
+
+<!-- SONGS -->
+<main id="songsContainer"></main>
+
+<!-- AUDIO PLAYER (ONLY ONE) -->
+<audio id="audioPlayer" controls></audio>
+
+<!-- FAVORITES PANEL -->
+<aside class="fav-panel" id="favPanel">
+  <div class="panel-header">
+    <span class="back-btn" onclick="toggleFav()">⬅ Back</span>
+    <h3>Favorites</h3>
+  </div>
+  <div id="favList"></div>
+</aside>
+
+<!-- 🔥 TOAST (for alerts instead of popup) -->
+<div id="toast"></div>
+
+<!-- JS (deferred for faster load ⚡) -->
+<script src="js/data.js" defer></script>
+<script src="js/storage.js" defer></script>
+<script src="js/ui.js" defer></script>
+<script src="js/app.js" defer></script>
+
+</body>
+</html>
